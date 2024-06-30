@@ -1,0 +1,32 @@
+{
+  "admin": [
+    {
+      "first_name": "Rashmi",
+      "last_name": "Neha",
+      "address": "xyz",
+      "email": "rashmi@gmail.com",
+      "password": "3132333435363738",
+      "id": 1
+    }
+  ],
+  "resturant": [
+    {
+      "id": 1,
+      "name": "test update test",
+      "description": "resturant",
+      "address": "test res",
+      "zip": "123445",
+      "mobile": 4242424242,
+      "city": "xyzr"
+    },
+    {
+      "name": "Test two",
+      "description": "Resturant",
+      "address": "Address",
+      "zip": "234567",
+      "mobile": 4242424242,
+      "city": "cityy",
+      "id": 2
+    }
+  ]
+}

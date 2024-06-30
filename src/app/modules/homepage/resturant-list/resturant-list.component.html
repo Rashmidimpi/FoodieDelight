@@ -1,0 +1,88 @@
+<div class="mat-card-wrraper-emp">
+
+    <mat-card>
+        <mat-card-actions class="card-actions">
+            <div>
+                <button mat-raised-button (click)="addResturant()">Add Resturant</button>
+
+            </div>
+            <div>
+                <mat-form-field appearance="outline">
+                    <mat-label>Search</mat-label>
+                    <input matInput type="text" [(ngModel)]="value" #search (keyup)='onSearchKeyUp(search)'>
+                    <mat-hint>Min 20 characters</mat-hint>
+                </mat-form-field>
+            </div>
+
+
+        </mat-card-actions>
+
+        <div class="mat-elevation-z8">
+
+            <table mat-table [dataSource]="dataSource" class="mat-elevation-z8" matSort>
+
+                <!-- ID Column -->
+                <ng-container matColumnDef="id">
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header>Id</th>
+                    <td mat-cell *matCellDef="let element">{{element.id}}</td>
+                </ng-container>
+
+                <!-- Name Column -->
+                <ng-container matColumnDef="name">
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header>Name</th>
+                    <td mat-cell *matCellDef="let element">{{element.name}}</td>
+                </ng-container>
+
+                <!-- Description Column -->
+                <ng-container matColumnDef="description">
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header>Business Type</th>
+                    <td mat-cell *matCellDef="let element">{{element.description}}</td>
+                </ng-container>
+
+                <!-- Address Column -->
+                <ng-container matColumnDef="address">
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header>Address</th>
+                    <td mat-cell *matCellDef="let element">{{element.address}}</td>
+                </ng-container>
+
+                <!-- Zip Code Column -->
+                <ng-container matColumnDef="zip">
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header>Zip Code</th>
+                    <td mat-cell *matCellDef="let element">{{element.zip}}</td>
+                </ng-container>
+
+                <!-- Contact Column -->
+                <ng-container matColumnDef="mobile">
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header>Contact Number</th>
+                    <td mat-cell *matCellDef="let element">{{element.mobile}}</td>
+                </ng-container>
+
+                <!-- City Column -->
+                <ng-container matColumnDef="city">
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header>City</th>
+                    <td mat-cell *matCellDef="let element">{{element.city}}</td>
+                </ng-container>
+
+                <!-- action Column -->
+                <ng-container matColumnDef="action">
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header>Action</th>
+                    <td mat-cell *matCellDef="let element">
+
+                        <button mat-raised-button class="mat-raised-button"
+                            (click)="editRecord(element.id,element)">Update</button>
+                        <button mat-raised-button class="mat-raised-button"
+                            (click)="deleteRecord(element.id)">Delete</button>
+
+                    </td>
+                </ng-container>
+
+                <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+
+            </table>
+
+            <mat-paginator #paginator [length]="dataSource.data.length" [pageIndex]="0" [pageSize]="10"
+                [pageSizeOptions]="[25, 50, 100, 250]">
+            </mat-paginator>
+        </div>
+    </mat-card>

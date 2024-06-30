@@ -25,3 +25,12 @@ Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To u
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+
+## I have used json server as a backend for this application, hence the process to run the application is 
+
+Hit the command ng serve as usual
+On an another powershell, hit the command json-server --watch db.json 
+You can see the db.json file, we do have some dummy data there
+To see the test coverage report of the application, hit the command ng test --watch=false --code-coverage
+
+All set! You can seamlessly run the application!

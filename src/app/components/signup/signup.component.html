@@ -1,0 +1,89 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand" href="#">FoodieDelight</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+            <li class="nav-item active">
+                <a class="nav-link" href="/sign-in">Login</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+<!-- signup form -->
+<div class="mat-card-wraper">
+
+    <mat-card style="width: 30%;">
+        <div>
+            <form [formGroup]="registerForm" (ngSubmit)="onSubmit()" novalidate>
+                <h3 class="h3 mb-3 font-weight-normal text-center">Register Form </h3>
+                <mat-form-field appearance="outline">
+                    <mat-label>Email</mat-label>
+                    <input type="email" matInput placeholder="Email" formControlName="email">
+                    <mat-error
+                        *ngIf="registerForm.controls['email'].hasError('email') && !registerForm.controls['email'].hasError('required')">
+                        Please enter a valid email address
+                    </mat-error>
+                    <mat-error *ngIf="registerForm.controls['email'].hasError('required')">
+                        Email is <strong>required</strong>
+                    </mat-error>
+
+                </mat-form-field>
+
+                <mat-form-field appearance="outline">
+                    <mat-label>First Name</mat-label>
+                    <input matInput placeholder="First Name" formControlName="first_name">
+
+                    <mat-error
+                        *ngIf="registerForm.controls['first_name'].hasError('pattern') && !registerForm.controls['first_name'].hasError('required')">
+                        Only Alphabet allowed.
+                    </mat-error>
+                    <mat-error *ngIf="registerForm.controls['first_name'].hasError('required')">
+                        First Name is <strong>required</strong>
+                    </mat-error>
+                </mat-form-field>
+
+                <mat-form-field appearance="outline">
+                    <mat-label>Last Name</mat-label>
+                    <input matInput placeholder="Last Name" formControlName="last_name">
+
+                    <mat-error
+                        *ngIf="registerForm.controls['last_name'].hasError('pattern') && !registerForm.controls['last_name'].hasError('required')">
+                        Only Alphabet allowed.
+                    </mat-error>
+                    <mat-error *ngIf="registerForm.controls['last_name'].hasError('required')">
+                        Last Name is <strong>required</strong>
+                    </mat-error>
+                </mat-form-field>
+
+
+                <mat-form-field appearance="outline">
+                    <mat-label>password</mat-label>
+                    <input type="password" matInput formControlName="password">
+                    <mat-error
+                        *ngIf="registerForm.controls['password'].hasError('minlength') && !registerForm.controls['password'].hasError('required')">
+                        Password must be 8 characters long
+                    </mat-error>
+                    <mat-error *ngIf="registerForm.controls['password'].hasError('required')">
+                        Password is <strong>required</strong>
+                    </mat-error>
+                </mat-form-field>
+
+                <mat-form-field appearance="outline">
+                    <mat-label>Address</mat-label>
+                    <input matInput placeholder="Address" formControlName="address">
+                    <mat-error *ngIf="registerForm.controls['address'].hasError('required')">
+                        Address is <strong>required</strong>
+                    </mat-error>
+                </mat-form-field>
+                <br>
+                <button mat-raised-button>Register</button>
+
+            </form>
+        </div>
+
+    </mat-card>
+</div>

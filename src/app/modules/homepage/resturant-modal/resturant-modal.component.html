@@ -1,0 +1,83 @@
+<div class="mat-card-dialogue">
+    <h2 mat-dialog-title>
+        {{isEdit?'Update':'Add'}} Resturant
+    </h2>
+
+    <mat-dialog-content [formGroup]="createRecordform">
+
+        <mat-form-field appearance="outline" class="formfield" style="width: -webkit-fill-available;">
+            <mat-label>Name</mat-label>
+            <input matInput formControlName="name" placeholder="Name">
+
+            <mat-error
+                *ngIf="createRecordform.controls['name'].hasError('pattern') && !createRecordform.controls['name'].hasError('required')">
+                Only Alphabet allowed.
+            </mat-error>
+            <mat-error *ngIf="createRecordform.controls['name'].hasError('required')">
+                Name is <strong>required</strong>
+            </mat-error>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline" class="formfield" style="width: -webkit-fill-available;">
+            <mat-label>Business Type</mat-label>
+            <input matInput formControlName="description" placeholder="Business Type">
+
+            <mat-error
+                *ngIf="createRecordform.controls['description'].hasError('pattern') && !createRecordform.controls['description'].hasError('required')">
+                Only Alphabet allowed.
+            </mat-error>
+            <mat-error *ngIf="createRecordform.controls['description'].hasError('required')">
+                Business Type is <strong>required</strong>
+            </mat-error>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline" class="formfield" style="width: -webkit-fill-available;">
+            <mat-label>Address</mat-label>
+            <input matInput formControlName="address" placeholder="Address">
+
+            <mat-error *ngIf="createRecordform.controls['address'].hasError('required')">
+                Address is <strong>required</strong>
+            </mat-error>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline" class="formfield" style="width: -webkit-fill-available;">
+            <mat-label>Zip Code</mat-label>
+            <input matInput formControlName="zip" placeholder="Zip Code">
+
+            <mat-error *ngIf="createRecordform.controls['zip'].hasError('required')">
+                Zip Code is <strong>required</strong>
+            </mat-error>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline" class="formfield" style="width: -webkit-fill-available;">
+            <mat-label>Contact Number</mat-label>
+            <input type="number" matInput formControlName="mobile" placeholder="Mobile">
+
+            <mat-error *ngIf="createRecordform.controls['mobile'].hasError('required')">
+                Contact number is <strong>required</strong>
+            </mat-error>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline" class="formfield" style="width: -webkit-fill-available;">
+            <mat-label>City</mat-label>
+            <input matInput formControlName="city" placeholder="City">
+
+            <mat-error *ngIf="createRecordform.controls['city'].hasError('required')">
+                City is <strong>required</strong>
+            </mat-error>
+        </mat-form-field>
+
+
+
+    </mat-dialog-content>
+
+    <mat-dialog-actions>
+        <button class="mat-mdc-raised-button" (click)="close()">
+            Close
+        </button> &nbsp;
+        <button class="mat-mdc-raised-button " (click)="save()">
+            {{isEdit?'Update':'Save'}}
+        </button>
+    </mat-dialog-actions>
+
+</div>

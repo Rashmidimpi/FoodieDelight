@@ -1,1 +1,142 @@
 /* You can add global styles to this file, and also import other style files */
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+.navbar-zIndex {
+    z-index: 2 !important;
+}
+
+.mat-mdc-card:not([class*=mat-elevation-z]) {
+    box-shadow: 0px 2px 1px -1px rgba(0, 0, 0, 0.2), 0px 1px 1px 0px rgba(0, 0, 0, 0.14), 0px 1px 3px 0px rgb(0 0 0 / 71%) !important;
+    padding: 16px;
+}
+
+.mat-elevation-z8{
+    overflow-y: scroll;
+}
+
+.example-container .mat-mdc-form-field+.mat-mdc-form-field {
+    margin-left: 8px;
+}
+
+.formfield {
+    margin-left: 10px;
+}
+
+.mat-mdc-card.test {
+    margin: 2% 5%;
+    padding-bottom: 30px;
+}
+
+.mat-tab-body-content {
+    overflow: hidden !important;
+}
+
+.mat-mdc-card.test-content {
+    margin: 2% 5%;
+}
+
+.mat-mdc-form-field-appearance-outline .mat-mdc-form-field-outline {
+    color: rgb(0 0 0 / 95%) !important;
+}
+
+.mat-mdc-form-field-appearance-outline.mat-mdc-form-field-disabled .mat-mdc-form-field-outline {
+    color: rgb(0 0 0 / 95%) !important;
+}
+
+
+/* table */
+
+.subject-margin {
+    margin-bottom: .5rem;
+}
+
+th.mat-header-cell,
+td.mat-cell,
+td.mat-footer-cell {
+    border-bottom-width: 0px;
+}
+
+a {
+    cursor: pointer;
+    border-radius: 5px;
+    position: relative;
+    padding-left: 0.5em;
+    padding-right: 1em;
+    padding-bottom: 0.1em;
+    text-decoration: none;
+}
+
+.mat-mdc-raised-button:not(:disabled)
+ {
+    background-color: #0A395A !important;
+    color: white !important;
+    margin: 5px;
+}
+
+.mat-mdc-header-row th {
+    font-weight: 800;
+    font-size: 12px;
+}
+
+.mat-header-cell {
+    color: rgb(14 14 14 / 77%);
+}
+
+
+table {
+    width: 100%;
+}
+
+.board-selected,
+.board-selected-clicked {
+    width: 155px;
+    height: 33px;
+    padding-top: 8px;
+    border-radius: 11px;
+    padding-left: 10px;
+}
+
+.board-selected {
+    box-shadow: inset 0px -7px 15px #1976d2ba;
+}
+
+.board-selected-clicked,
+.board-selected:hover {
+    box-shadow: inset 0px -7px 15px #d2a219ba;
+}
+
+.pointer {
+    cursor: pointer;
+}
+
+.mat-header-cell.mat-column-action {
+    text-align: right;
+}
+
+button .mat-icon {
+    margin-bottom: 5px;
+}
+
+.mat-mdc-form-field{width:100%;}
+.misc-bottom-padding{margin:8px 0 20px;}
+.misc-bottom-padding mat-label{margin-right:15px;}
+.mat-radio-label{margin:0 15px 0 0;}
+.title-center{margin:0 auto;}
+.button-wrapper{margin-top:10px;}
+
+.mat-card-wraper {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .mat-card-wrraper-emp {
+    width: 90%;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+  }
